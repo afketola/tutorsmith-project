@@ -128,3 +128,14 @@ AOS.init({
     easing: "ease",
     once: true, // whether animation should happen only once - while scrolling down
 });
+
+function passwordVisibility() {
+    var x = document.getElementById("exampleInputPassword1");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+    var y = document.getElementById("eyeopened");
+    y.classList.toggle("fa-eye-slash");
+  } 

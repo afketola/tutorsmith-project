@@ -256,7 +256,6 @@ li {
 	font-size: 1.25rem;
 }
 
-
 /****************/
 /*     Home     */
 /****************/
@@ -306,6 +305,7 @@ li {
 	background: transparent;
 	border-image-source: var(--gradient);
 	box-shadow: 5px 5px 0px 0px var(--tertiary);
+	transition: all 0.3s
 }
 
 .btn:hover {
@@ -315,7 +315,7 @@ li {
 	padding: 10px 30px;
 	transform: translate(5px, 5px);
 }
-
+.btn-check:focus+.btn, .btn:focus{box-shadow: none; }
 /* Home page button */
 .btn-secondary {
 	color: white;
@@ -335,7 +335,6 @@ li {
 	border-radius: 0;
 	padding: 10px 30px;
 	transform: translate(5px, 5px);
-}
 }
 
 /* Other Pages Button */
@@ -517,6 +516,7 @@ li {
 	padding-left: 1.5rem;
 	padding-top: 0.775rem;
 	padding-bottom: 0.775rem;
+	resize: none;
 }
 
 
@@ -605,11 +605,112 @@ li {
 	margin-top: 0.125rem;
 	margin-bottom: 0.5rem;
 }
+/******Login Page CSS ********/
+
+.form-side-display{
+    background-image: url('../assets/images/tutorsmith-loginBG.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.form-side-display a strong{font-size: 30px; color:#fff; }
+.form-side-display a{text-align: center;text-align: -webkit-center;}
+.login-main{
+    padding: 100px 0px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 75%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+.login-main .login-main-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+.login-main h6{
+    letter-spacing: 0px;
+    font-size: 18px;
+}
+.login-main h2{
+    letter-spacing: 0px;
+    color: #15161D;
+    opacity: 1;
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+.login-form-main{
+    max-width: 700px;
+}
+.login-form-input input{
+    min-height: 45px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 7px;
+    opacity: 1;
+}
+.login-form-input select{
+	min-height: 45px;
+    border: 1px solid #ced4da;
+    border-radius: 7px;
+    opacity: 1;
+}
+.form-password-eye-box .login-form-input input{padding-right: 45px;}
+.login-form-input input::placeholder, .contact-us-form input::placeholder, #textarea-label {
+    color: #c5c2c7;
+}
+.login-form-input select option{
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* 
+#forget-password:hover{
+    color: #7D57CD;
+    transition: ease-in-out all 0.2s;
+} */
+.form-password-eye-box{
+    position: relative;
+}
+.form-password-eye{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: transparent;
+    border: none;
+    font-size: 17px;
+    color: #a9a9a9;
+	padding: 0 6px;
+	cursor: pointer; 
+}
+.form-side-logo{
+	width: 110px;
+}
+.form-control:focus, .form-check-input:focus, .login-form-input select:focus{box-shadow: none;}
+.form-row .login-form-input{width: 48%;}
+textarea::placeholder, input::placeholder, .form-select, ::placeholder{font-size:15px; color:#a9a9a9;}
+.form-link-a{color:#0a58ca}
+.login-main textarea{padding:0.375rem 0.75rem}
+#eyeopened{display:block;}
+#eyeclosed{display:none;}
 
 
 /*************************/
 /*     Media Queries     */
 /*************************/
+@media screen and (max-width:1399px){
+	#forget-password, .form-check-label, #register-new-user{font-size: 15px;}
+	.login-main{
+        padding: 60px 0px;
+		/* max-width: 600px; */
+    }
+	.login-main h2 {
+        font-size: 30px;
+        margin-bottom: 22px;
+    }
+}
 @media only screen and (max-width: 1024px) {
 	.services,
 	.work,
@@ -619,6 +720,14 @@ li {
 	.plans {
 		height: 100%;
 	}
+	.login-main h2 {
+        font-size: 27px;
+        margin-bottom: 37px;
+    }
+    .login-main{
+        padding: 30px 0px;
+        max-width: 500px;
+    }
 }
 
 @media (min-width: 992px) {
@@ -699,8 +808,49 @@ li {
 		margin-left: 0.25rem;
 	}
 }
-
+@media screen and (max-width: 992px) {
+	.login-form-input input, .login-form-input select{min-height:40px}
+	.login-main {
+		padding: 20px 0px;
+	}
+	.login-main h6 {
+		font-size: 17px;
+	}   
+	.login-main h2 {
+		font-size: 25px;
+		margin-bottom: 27px;
+	}
+	.form-side-logo {
+		width: 85px;
+	}
+	.form-side-display a strong {
+		font-size: 24px;
+	}
+	.form-password-eye{font-size:14px}
+}
+@media screen and (max-width: 767px) {	
+	.login-main{height: 100%;}
+	.form-row{display:block !important}
+	.form-row .login-form-input{width:100%;}
+	.form-side-display {
+		min-height: 240px;
+		height: initial;
+	}
+	.form-side-logo {
+		width: 72px;
+	}
+	.form-side-display a strong {
+		font-size: 20px;
+	}
+}
 @media only screen and (max-width: 540px) {
+	.login-form-input input, .login-form-input select {
+		min-height: 34px;
+   	 	height: 34px;
+	}
+	#forget-password, .form-check-label, #register-new-user {
+		font-size: 14px;
+	}
 	h1 {
 		font-size: 30px;
 	}
@@ -723,5 +873,8 @@ li {
 		right: -16px;
 		width: 22px;
 		background-size: 22px 34px;
+	}
+	.form-side-display {
+		min-height: 200px;
 	}
 }
